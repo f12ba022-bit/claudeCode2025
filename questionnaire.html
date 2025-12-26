@@ -608,6 +608,28 @@
                     }
                 });
             });
+
+            // 質問項目のラジオボタンクリック時に次の質問へ自動スクロール
+            const questionRadios = document.querySelectorAll('.question-item input[type="radio"]');
+
+            questionRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // 現在の質問項目を取得
+                    const currentQuestionItem = this.closest('.question-item');
+                    // 次の質問項目を取得
+                    const nextQuestionItem = currentQuestionItem.nextElementSibling;
+
+                    // 次の質問が存在する場合のみスクロール
+                    if (nextQuestionItem && nextQuestionItem.classList.contains('question-item')) {
+                        setTimeout(() => {
+                            nextQuestionItem.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 200);
+                    }
+                });
+            });
         });
     </script>
 </body>
