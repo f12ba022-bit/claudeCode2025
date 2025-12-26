@@ -11,15 +11,21 @@
             font-family: 'MS Gothic', 'MS PGothic', monospace, sans-serif;
             background-color: #fff;
             font-size: 18px;
-            padding: 20px;
+            padding: 20px 0;
         }
 
-        .container {
-            max-width: 100%;
+        .container-fluid {
             background-color: #fff;
             padding: 0;
-            border-radius: 0;
-            box-shadow: none;
+        }
+
+        .container-fluid .row {
+            margin: 0;
+        }
+
+        .container-fluid .col-lg-6,
+        .container-fluid .col-md-8 {
+            padding: 0 20px;
         }
 
         .title {
@@ -222,12 +228,14 @@
         /* スマホ用レイアウト */
         @media (max-width: 767px) {
             body {
-                padding: 15px;
+                padding: 15px 0;
                 font-size: 16px;
             }
 
-            .container {
-                padding: 0;
+            .container-fluid .col-lg-6,
+            .container-fluid .col-md-8,
+            .container-fluid .col-sm-12 {
+                padding: 0 15px;
             }
 
             .title {
@@ -325,8 +333,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">質　問　票</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+                <div class="title">質　問　票</div>
 
         <div class="instruction">
             該当する箇所へ☑（斜線）を記入してください。
@@ -603,6 +613,8 @@
                 </div>
             </div>
         </div>
+        </div>
+            </div>
         </div>
     </div>
 
