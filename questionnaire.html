@@ -271,19 +271,71 @@
 
             .question-label {
                 font-size: 16px;
+                width: 30px;
             }
 
             .question-text {
                 font-size: 16px;
             }
 
+            .question-row {
+                margin-bottom: 12px;
+            }
+
+            /* スマホでチェックボックスを縦並びに */
+            .checkbox-group.row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .checkbox-group.row > div {
+                width: 100%;
+                padding: 0;
+            }
+
             .checkbox-item {
-                font-size: 16px;
+                font-size: 17px;
+                min-width: auto;
+                padding: 8px 0;
             }
 
             .checkbox-item input[type="checkbox"] {
-                width: 20px;
-                height: 20px;
+                width: 22px;
+                height: 22px;
+            }
+
+            .other-input {
+                width: 100%;
+                max-width: 250px;
+                margin-top: 5px;
+                display: block;
+                margin-left: 32px;
+            }
+
+            /* ラジオボタンも縦並びに */
+            .answer-section .row,
+            .card-body > .row {
+                flex-direction: column;
+                gap: 10px;
+                margin-left: 30px !important;
+            }
+
+            .answer-section .row > div,
+            .card-body > .row > div {
+                width: 100%;
+                padding: 0;
+            }
+
+            .radio-item {
+                font-size: 18px;
+                min-width: auto;
+                padding: 8px 0;
+            }
+
+            .radio-item input[type="radio"] {
+                width: 22px;
+                height: 22px;
+                margin-right: 10px;
             }
 
             .main-questions-header {
@@ -302,12 +354,16 @@
                 padding-left: 15px;
                 padding-right: 15px;
                 padding-bottom: 12px;
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .question-number {
                 font-size: 18px;
                 min-width: 40px;
                 padding: 5px 10px;
+                margin-bottom: 10px;
+                margin-right: 0;
             }
 
             .question-content {
@@ -315,27 +371,24 @@
             }
 
             .answer-section {
-                margin-left: 30px;
+                margin-left: 0;
                 padding: 10px 0;
             }
 
             .answer-options {
-                gap: 8px;
+                gap: 10px;
             }
 
             .answer-options .row {
-                margin-bottom: 8px;
+                margin-bottom: 0;
+                gap: 10px;
             }
 
-            .radio-item {
-                font-size: 18px;
-                min-width: 140px;
-            }
-
-            .radio-item input[type="radio"] {
-                width: 20px;
-                height: 20px;
-                margin-right: 8px;
+            .note {
+                font-size: 14px;
+                display: block;
+                margin-left: 0;
+                margin-top: 5px;
             }
         }
     </style>
