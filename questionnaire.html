@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>質問票</title>
+    <style>
+        body {
+            font-family: 'MS Gothic', 'MS PGothic', monospace, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .title {
+            background-color: #f5e6a8;
+            border: 2px solid #333;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 8px;
+        }
+
+        .instruction {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .section {
+            border: 2px solid #333;
+            margin-bottom: 15px;
+            background-color: #fef9e6;
+        }
+
+        .section-title {
+            font-weight: bold;
+            padding: 8px 10px;
+            background-color: #fef9e6;
+            border-bottom: 1px solid #333;
+        }
+
+        .section-content {
+            padding: 10px;
+        }
+
+        .question-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .question-label {
+            width: 30px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .question-text {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .checkbox-item {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 3px;
+        }
+
+        .other-input {
+            width: 150px;
+            border: none;
+            border-bottom: 1px solid #333;
+            background-color: transparent;
+        }
+
+        .main-questions {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+
+        .main-questions-header {
+            background-color: #f5e6a8;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 2px solid #333;
+            letter-spacing: 12px;
+        }
+
+        .response-header {
+            background-color: #f5e6a8;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            border-bottom: 2px solid #333;
+            border-left: 2px solid #333;
+        }
+
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .main-table tr {
+            border-bottom: 1px solid #333;
+        }
+
+        .main-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .main-table td {
+            padding: 8px;
+        }
+
+        .question-number {
+            width: 40px;
+            background-color: #f5e6a8;
+            text-align: center;
+            font-weight: bold;
+            border-right: 2px solid #333;
+        }
+
+        .question-content {
+            flex-grow: 1;
+            padding-left: 10px;
+        }
+
+        .answer-section {
+            border-left: 2px solid #333;
+            padding: 8px;
+            min-width: 180px;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .answer-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-item {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .radio-item input[type="radio"] {
+            margin-right: 3px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-left: 5px;
+        }
+
+        .side-note {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            position: fixed;
+            right: 10px;
+            top: 300px;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 10px 5px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        @media print {
+            .side-note {
+                position: absolute;
+                right: -80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">質　問　票</div>
+
+    <div class="instruction">
+        該当する箇所へ☑（斜線）を記入してください。
+    </div>
+
+    <!-- 既往歴セクション -->
+    <div class="section">
+        <div class="section-title">既往歴</div>
+        <div class="section-content">
+            <div class="question-row">
+                <div class="question-label">a</div>
+                <div class="question-text">現在、治療中の病気はありますか？</div>
+            </div>
+            <div class="checkbox-group" style="margin-left: 30px; margin-bottom: 10px;">
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="なし">なし</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="高血圧">高血圧</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="糖尿病">糖尿病</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="脳卒中病">脳卒中病</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="脳卒中">脳卒中</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="心臓病">心臓病</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_a" value="胃腸病">胃腸病</label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="history_a" value="他">他（<input type="text" class="other-input">）
+                </label>
+            </div>
+
+            <div class="question-row">
+                <div class="question-label">b</div>
+                <div class="question-text">いままでに医師から貧血といわれたことはありますか？</div>
+            </div>
+            <div class="checkbox-group" style="margin-left: 30px;">
+                <label class="checkbox-item"><input type="checkbox" name="history_b" value="なし">なし</label>
+                <label class="checkbox-item"><input type="checkbox" name="history_b" value="あり">あり</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自覚症状セクション -->
+    <div class="section">
+        <div class="section-title">自覚症状</div>
+        <div class="section-content">
+            <div class="question-row">
+                <div class="question-label">c</div>
+                <div class="question-text">次の症状はありますか？<span class="note">※ある場合は3つまで選択可</span></div>
+            </div>
+            <div class="checkbox-group" style="margin-left: 30px;">
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="特になし">特になし</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="胸痛">胸痛</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="息切れ">息切れ</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="頭痛">頭痛</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="せきたん">せきたん</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="動悸">動悸</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="不眠">不眠</label>
+                <label class="checkbox-item"><input type="checkbox" name="symptoms" value="めまい">めまい</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 質問項目セクション -->
+    <div class="main-questions">
+        <div class="main-questions-header">質　　問　　項　　目</div>
+
+        <table class="main-table">
+            <tr>
+                <td class="question-number">1</td>
+                <td class="question-content">あなたの現在の健康状態はいかがですか。</td>
+                <td class="answer-section">
+                    <div class="answer-options">
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q1" value="よい">よい</label>
+                            <label class="radio-item"><input type="radio" name="q1" value="まあよい">まあよい</label>
+                        </div>
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q1" value="ふつう">ふつう</label>
+                            <label class="radio-item"><input type="radio" name="q1" value="あまりよくない">あまりよくない</label>
+                        </div>
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q1" value="よくない">よくない</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">2</td>
+                <td class="question-content">毎日の生活に満足していますか。</td>
+                <td class="answer-section">
+                    <div class="answer-options">
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q2" value="満足">満足</label>
+                            <label class="radio-item"><input type="radio" name="q2" value="やや満足">やや満足</label>
+                        </div>
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q2" value="まあや満">まあや満</label>
+                            <label class="radio-item"><input type="radio" name="q2" value="不満">不満</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">3</td>
+                <td class="question-content">1日3食きちんと食べていますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q3" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q3" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">4</td>
+                <td class="question-content">半年前に比べて固いもの（さきいか、たくあんなど）が食べにくくなりましたか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q4" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q4" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">5</td>
+                <td class="question-content">お茶や汁物等でむせることがありますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q5" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q5" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">6</td>
+                <td class="question-content">6カ月間で2～3kg以上の体重減少がありましたか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q6" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q6" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">7</td>
+                <td class="question-content">以前に比べて歩く速度が遅くなってきたと思いますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q7" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q7" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">8</td>
+                <td class="question-content">この1年間に転んだことがありますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q8" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q8" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">9</td>
+                <td class="question-content">ウォーキング等の運動を週に1回以上していますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q9" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q9" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">10</td>
+                <td class="question-content">周りの人からいつも同じことを聞くなどの物忘れがあると言われていますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q10" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q10" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">11</td>
+                <td class="question-content">今日が何月何日かわからない時がありますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q11" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q11" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">12</td>
+                <td class="question-content">あなたはたばこを吸いますか。</td>
+                <td class="answer-section">
+                    <div class="answer-options">
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q12" value="吸っている">吸っている</label>
+                            <label class="radio-item"><input type="radio" name="q12" value="吸っていない">吸っていない</label>
+                        </div>
+                        <div class="answer-row">
+                            <label class="radio-item"><input type="radio" name="q12" value="やめた">やめた</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">13</td>
+                <td class="question-content">週に1回以上は外出していますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q13" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q13" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">14</td>
+                <td class="question-content">ふだんから家族や友人と付き合いがありますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q14" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q14" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="question-number">15</td>
+                <td class="question-content">体調が悪いときに、身近に相談できる人がいますか。</td>
+                <td class="answer-section">
+                    <div class="answer-row">
+                        <label class="radio-item"><input type="radio" name="q15" value="はい">はい</label>
+                        <label class="radio-item"><input type="radio" name="q15" value="いいえ">いいえ</label>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="side-note">
+        それぞれの問いについて、あてはまるものに○をつけてください（複数選択不可）
+    </div>
+
+    <script>
+        // 自覚症状の選択を3つまでに制限
+        document.addEventListener('DOMContentLoaded', function() {
+            const symptomCheckboxes = document.querySelectorAll('input[name="symptoms"]');
+            const maxSelections = 3;
+
+            symptomCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checkedCount = Array.from(symptomCheckboxes).filter(cb => cb.checked).length;
+
+                    if (checkedCount > maxSelections) {
+                        this.checked = false;
+                        alert('症状は3つまで選択できます。');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
