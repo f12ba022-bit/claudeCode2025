@@ -78,13 +78,14 @@
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .checkbox-item input[type="checkbox"] {
-            margin-right: 5px;
-            width: 16px;
-            height: 16px;
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
         }
 
         .other-input {
@@ -148,25 +149,28 @@
         .answer-options {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
         }
 
         .answer-row {
             display: flex;
-            gap: 15px;
+            gap: 20px;
+            align-items: center;
         }
 
         .radio-item {
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
-            font-size: 16px;
+            font-size: 18px;
+            min-width: 150px;
         }
 
         .radio-item input[type="radio"] {
-            margin-right: 5px;
-            width: 16px;
-            height: 16px;
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
         }
 
         .note {
