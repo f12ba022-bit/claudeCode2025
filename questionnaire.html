@@ -110,10 +110,16 @@
         }
 
         .other-input {
-            width: 150px;
-            border: none;
-            border-bottom: 1px solid #333;
-            background-color: transparent;
+            width: 200px;
+            display: inline-block;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 18px;
+        }
+
+        .other-input.form-control {
+            height: auto;
         }
 
         .main-questions.card {
@@ -361,7 +367,7 @@
                 <div class="col-md-4 col-sm-6"><label class="checkbox-item"><input type="checkbox" name="history_a" value="心臓病">心臓病</label></div>
                 <div class="col-md-4 col-sm-6"><label class="checkbox-item"><input type="checkbox" name="history_a" value="胃腸病">胃腸病</label></div>
                 <div class="col-md-4 col-sm-6"><label class="checkbox-item">
-                    <input type="checkbox" name="history_a" value="他">他（<input type="text" class="other-input">）
+                    <input type="checkbox" name="history_a" value="他">他 <input type="text" class="form-control other-input">
                 </label></div>
             </div>
         </div>
@@ -440,7 +446,7 @@
                         <div class="col-md-6"><label class="radio-item"><input type="radio" name="q2" value="やや満足">やや満足</label></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6"><label class="radio-item"><input type="radio" name="q2" value="まあや満">まあや満</label></div>
+                        <div class="col-md-6"><label class="radio-item"><input type="radio" name="q2" value="やや不満">やや不満</label></div>
                         <div class="col-md-6"><label class="radio-item"><input type="radio" name="q2" value="不満">不満</label></div>
                     </div>
                 </div>
