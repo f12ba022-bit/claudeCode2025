@@ -282,21 +282,22 @@
                 margin-bottom: 12px;
             }
 
-            /* スマホでチェックボックスを縦並びに */
+            /* スマホでチェックボックスを2列に */
             .checkbox-group.row {
-                flex-direction: column;
-                gap: 10px;
+                flex-direction: row;
+                gap: 5px;
             }
 
             .checkbox-group.row > div {
-                width: 100%;
+                width: calc(50% - 2.5px);
                 padding: 0;
             }
 
             .checkbox-item {
-                font-size: 17px;
+                font-size: 16px;
                 min-width: auto;
-                padding: 8px 0;
+                padding: 8px 5px;
+                white-space: normal;
             }
 
             .checkbox-item input[type="checkbox"] {
@@ -306,36 +307,36 @@
 
             .other-input {
                 width: 100%;
-                max-width: 250px;
+                max-width: 180px;
                 margin-top: 5px;
                 display: block;
-                margin-left: 32px;
+                font-size: 14px;
             }
 
-            /* ラジオボタンも縦並びに */
+            /* ラジオボタンも2列に */
             .answer-section .row,
             .card-body > .row {
-                flex-direction: column;
-                gap: 10px;
+                flex-direction: row;
+                gap: 5px;
                 margin-left: 30px !important;
             }
 
             .answer-section .row > div,
             .card-body > .row > div {
-                width: 100%;
+                width: calc(50% - 2.5px);
                 padding: 0;
             }
 
             .radio-item {
-                font-size: 18px;
+                font-size: 17px;
                 min-width: auto;
-                padding: 8px 0;
+                padding: 8px 5px;
             }
 
             .radio-item input[type="radio"] {
                 width: 22px;
                 height: 22px;
-                margin-right: 10px;
+                margin-right: 8px;
             }
 
             .main-questions-header {
