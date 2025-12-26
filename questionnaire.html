@@ -45,21 +45,23 @@
             font-size: 20px;
         }
 
-        .section {
+        .card {
             border: 2px solid #333;
             margin-bottom: 20px;
             background-color: #fff;
+            border-radius: 0;
         }
 
-        .section-title {
+        .card-header {
             font-weight: bold;
             padding: 15px 20px;
             background-color: #fff;
             border-bottom: 2px solid #333;
             font-size: 24px;
+            border-radius: 0;
         }
 
-        .section-content {
+        .card-body {
             padding: 20px;
         }
 
@@ -114,12 +116,12 @@
             background-color: transparent;
         }
 
-        .main-questions {
+        .main-questions.card {
             border: 2px solid #333;
             background-color: #fff;
         }
 
-        .main-questions-header {
+        .main-questions-header.card-header {
             background-color: #f5e6a8;
             text-align: center;
             padding: 20px;
@@ -248,16 +250,16 @@
                 font-size: 16px;
             }
 
-            .section {
+            .card {
                 margin-bottom: 15px;
             }
 
-            .section-title {
+            .card-header {
                 font-size: 18px;
                 padding: 12px 15px;
             }
 
-            .section-content {
+            .card-body {
                 padding: 15px;
             }
 
@@ -343,9 +345,9 @@
         </div>
 
         <!-- 既往歴セクション a -->
-        <div class="section">
-        <div class="section-title">既往歴</div>
-        <div class="section-content">
+        <div class="card">
+        <div class="card-header">既往歴</div>
+        <div class="card-body">
             <div class="question-row">
                 <div class="question-label">a</div>
                 <div class="question-text">現在、治療中の病気はありますか？</div>
@@ -366,8 +368,8 @@
     </div>
 
     <!-- 既往歴セクション b -->
-    <div class="section">
-        <div class="section-content">
+    <div class="card">
+        <div class="card-body">
             <div class="question-row">
                 <div class="question-label">b</div>
                 <div class="question-text">いままでに医師から貧血といわれたことはありますか？</div>
@@ -380,9 +382,9 @@
     </div>
 
     <!-- 自覚症状セクション -->
-    <div class="section">
-        <div class="section-title">自覚症状</div>
-        <div class="section-content">
+    <div class="card">
+        <div class="card-header">自覚症状</div>
+        <div class="card-body">
             <div class="question-row">
                 <div class="question-label">c</div>
                 <div class="question-text">次の症状はありますか？<span class="note">※ある場合は3つまで選択可</span></div>
@@ -401,8 +403,8 @@
     </div>
 
     <!-- 質問項目セクション -->
-    <div class="main-questions">
-        <div class="main-questions-header">質　　問　　項　　目</div>
+    <div class="card main-questions">
+        <div class="card-header main-questions-header">質　　問　　項　　目</div>
 
         <div class="question-item">
             <div class="question-header">
