@@ -9,17 +9,17 @@
     <style>
         body {
             font-family: 'MS Gothic', 'MS PGothic', monospace, sans-serif;
-            background-color: #f8f9fa;
-            font-size: 16px;
-            padding: 20px 0;
+            background-color: #fff;
+            font-size: 18px;
+            padding: 20px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 100%;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .title {
@@ -27,53 +27,53 @@
             border: 2px solid #333;
             border-radius: 20px;
             text-align: center;
-            padding: 12px;
-            font-size: 28px;
+            padding: 20px;
+            font-size: 36px;
             font-weight: bold;
-            margin-bottom: 15px;
-            letter-spacing: 8px;
+            margin-bottom: 20px;
+            letter-spacing: 12px;
         }
 
         .instruction {
-            margin-bottom: 15px;
-            font-size: 16px;
+            margin-bottom: 20px;
+            font-size: 20px;
         }
 
         .section {
             border: 2px solid #333;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background-color: #fff;
         }
 
         .section-title {
             font-weight: bold;
-            padding: 10px 12px;
+            padding: 15px 20px;
             background-color: #fff;
-            border-bottom: 1px solid #333;
-            font-size: 18px;
+            border-bottom: 2px solid #333;
+            font-size: 24px;
         }
 
         .section-content {
-            padding: 10px;
+            padding: 20px;
         }
 
         .question-row {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
 
         .question-label {
-            width: 30px;
+            width: 40px;
             font-weight: bold;
             flex-shrink: 0;
-            font-size: 16px;
+            font-size: 20px;
         }
 
         .question-text {
             flex-grow: 1;
-            margin-right: 10px;
-            font-size: 16px;
+            margin-right: 15px;
+            font-size: 20px;
         }
 
         .checkbox-group {
@@ -90,14 +90,14 @@
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
-            font-size: 18px;
-            min-width: 130px;
+            font-size: 20px;
+            min-width: 150px;
         }
 
         .checkbox-item input[type="checkbox"] {
-            margin-right: 8px;
-            width: 20px;
-            height: 20px;
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
         }
 
@@ -116,16 +116,16 @@
         .main-questions-header {
             background-color: #f5e6a8;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 28px;
             border-bottom: 2px solid #333;
-            letter-spacing: 12px;
+            letter-spacing: 16px;
         }
 
         .question-item {
             border-bottom: 1px solid #333;
-            padding: 15px;
+            padding: 25px;
         }
 
         .question-item:last-child {
@@ -145,25 +145,25 @@
         }
 
         .question-number {
-            min-width: 35px;
+            min-width: 50px;
             font-weight: bold;
             background-color: #333;
             color: #fff;
-            padding: 4px 10px;
-            border-radius: 3px;
-            margin-right: 12px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-right: 20px;
             text-align: center;
-            font-size: 17px;
+            font-size: 22px;
         }
 
         .question-content {
             flex-grow: 1;
-            font-size: 18px;
+            font-size: 22px;
         }
 
         .answer-section {
-            margin-left: 40px;
-            padding: 8px;
+            margin-left: 60px;
+            padding: 15px;
         }
 
         .answer-options {
@@ -180,147 +180,146 @@
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
-            font-size: 18px;
-            min-width: 150px;
+            font-size: 22px;
+            min-width: 180px;
         }
 
         .radio-item input[type="radio"] {
-            margin-right: 8px;
-            width: 20px;
-            height: 20px;
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
         }
 
         .note {
-            font-size: 12px;
+            font-size: 16px;
             color: #666;
-            margin-left: 5px;
+            margin-left: 10px;
         }
 
         /* タブレット用レイアウト */
         @media (max-width: 1023px) and (min-width: 768px) {
-            .container {
-                padding: 15px;
+            body {
+                font-size: 17px;
             }
 
             .question-item {
-                padding: 12px;
+                padding: 20px;
             }
 
             .question-header {
-                margin-left: -12px;
-                margin-right: -12px;
-                padding-left: 12px;
-                padding-right: 12px;
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
             .answer-section {
-                margin-left: 35px;
+                margin-left: 50px;
             }
         }
 
         /* スマホ用レイアウト */
         @media (max-width: 767px) {
             body {
-                padding: 10px 0;
-                font-size: 14px;
+                padding: 15px;
+                font-size: 16px;
             }
 
             .container {
-                padding: 10px;
-                border-radius: 0;
+                padding: 0;
             }
 
             .title {
-                font-size: 20px;
-                letter-spacing: 4px;
-                padding: 10px;
+                font-size: 24px;
+                letter-spacing: 6px;
+                padding: 15px;
             }
 
             .instruction {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .section {
-                margin-bottom: 12px;
+                margin-bottom: 15px;
             }
 
             .section-title {
-                font-size: 16px;
-                padding: 8px 10px;
+                font-size: 18px;
+                padding: 12px 15px;
             }
 
             .section-content {
-                padding: 8px;
+                padding: 15px;
             }
 
             .question-label {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .question-text {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .checkbox-item {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .checkbox-item input[type="checkbox"] {
-                width: 18px;
-                height: 18px;
+                width: 20px;
+                height: 20px;
             }
 
             .main-questions-header {
-                font-size: 16px;
-                letter-spacing: 6px;
-                padding: 8px;
+                font-size: 20px;
+                letter-spacing: 8px;
+                padding: 15px;
             }
 
             .question-item {
-                padding: 10px;
+                padding: 15px;
             }
 
             .question-header {
-                margin-left: -10px;
-                margin-right: -10px;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-bottom: 8px;
+                margin-left: -15px;
+                margin-right: -15px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 12px;
             }
 
             .question-number {
-                font-size: 14px;
-                min-width: 28px;
-                padding: 3px 8px;
+                font-size: 18px;
+                min-width: 40px;
+                padding: 5px 10px;
             }
 
             .question-content {
-                font-size: 15px;
+                font-size: 18px;
             }
 
             .answer-section {
-                margin-left: 20px;
-                padding: 6px 0;
+                margin-left: 30px;
+                padding: 10px 0;
             }
 
             .answer-options {
-                gap: 6px;
+                gap: 8px;
             }
 
             .answer-options .row {
-                margin-bottom: 6px;
+                margin-bottom: 8px;
             }
 
             .radio-item {
-                font-size: 15px;
-                min-width: 120px;
+                font-size: 18px;
+                min-width: 140px;
             }
 
             .radio-item input[type="radio"] {
-                width: 18px;
-                height: 18px;
-                margin-right: 6px;
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
             }
         }
     </style>
